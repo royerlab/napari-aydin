@@ -16,11 +16,12 @@ from aydin.restoration.denoise.noise2selffgr import noise2self_fgr
 
 class Aydin(QWidget):
     """
-    Aydin is a user-friendly, feature-rich, and fast image denoising tool that provides
-    a number of self-supervised, auto-tuned, and unsupervised image denoising algorithms.
-    Aydin handles from the get-go n-dimensional array-structured images with an arbitrary
-    number of batch dimensions, channel dimensions, and typically up to 4 spatio-temporal
-    dimensions.
+    Aydin is a user-friendly, feature-rich, and fast image denoising
+    tool that provides a number of self-supervised, auto-tuned, and
+    unsupervised image denoising algorithms. Aydin handles from the
+    get-go n-dimensional array-structured images with an arbitrary
+    number of batch dimensions, channel dimensions, and typically
+    up to 4 spatio-temporal dimensions.
     """
     # your QWidget.__init__ can optionally request the napari viewer instance
     # in one of two ways:
@@ -44,6 +45,7 @@ class Aydin(QWidget):
 
         # description label
         description_label = QLabel(self.__doc__)
+        description_label.setWordWrap(True)
 
         self.layout().addWidget(description_label)
 
