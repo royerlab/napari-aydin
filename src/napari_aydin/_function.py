@@ -12,8 +12,6 @@ from enum import Enum
 import numpy as np
 from napari_plugin_engine import napari_hook_implementation
 
-from aydin.restoration.denoise.classic import classic_denoise
-from aydin.restoration.denoise.noise2selffgr import noise2self_fgr
 
 
 if TYPE_CHECKING:
@@ -31,9 +29,11 @@ def napari_experimental_provide_function():
 
 def aydin_classic_denoise(input_image: "napari.types.ImageData"
 ) -> "napari.types.ImageData":
+    from aydin.restoration.denoise.classic import classic_denoise
     return classic_denoise(input_image)
 
 def aydin_noise2self_fgr(input_image: "napari.types.ImageData"
 ) -> "napari.types.ImageData":
+    from aydin.restoration.denoise.noise2selffgr import noise2self_fgr
     return noise2self_fgr(input_image)
 
