@@ -33,7 +33,7 @@ def napari_experimental_provide_function():
 def aydin_classic_denoise(input_image: "napari.types.ImageData"
 ) -> "napari.types.ImageData":
     from aydin.restoration.denoise.classic import classic_denoise
-    return classic_denoise(input_image)
+    return classic_denoise(input_image, variant='butterworth')
 
 
 @register_function(menu="Filtering / noise removal > noise2self (fgr, aydin)")
