@@ -27,17 +27,13 @@ def napari_experimental_provide_function():
     # we can return a single function
     # or a tuple of (function, magicgui_options)
     # or a list of multiple functions with or without options, as shown here:
-    return [aydin_denoise]  # [threshold, image_arithmetic]
+    return [aydin_classic_denoise, aydin_noise2self_fgr]
 
+def aydin_classic_denoise(input_image: "napari.types.ImageData"
+) -> "napari.types.ImageData":
+    return classic_denoise(input_image)
 
-# using Enums is a good way to get a dropdown menu.  Used here to select from np functions
-class Operation(Enum):
-    Noise2SelfFGR = noise2self_fgr
-    Butterworth = classic_denoise
+def aydin_noise2self_fgr(input_image: "napari.types.ImageData"
+) -> "napari.types.ImageData":
+    return noise2self_fgr(input_image)
 
-
-def aydin_denoise(
-    layerA: "napari.types.ImageData", operation: Operation, layerB: "napari.types.ImageData"
-) -> "napari.types.LayerDataTuple":
-    """Adds, subtracts, multiplies, or divides two same-shaped image layers."""
-    return (operation.value(layerA), {"colormap": "turbo"})
