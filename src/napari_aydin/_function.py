@@ -12,6 +12,7 @@ from enum import Enum
 import numpy as np
 from napari_plugin_engine import napari_hook_implementation
 
+from napari_tools_menu import register_function
 
 
 if TYPE_CHECKING:
@@ -27,11 +28,15 @@ def napari_experimental_provide_function():
     # or a list of multiple functions with or without options, as shown here:
     return [aydin_classic_denoise, aydin_noise2self_fgr]
 
+
+@register_function(menu="Filtering / noise removal > Classic denoise (aydin)")
 def aydin_classic_denoise(input_image: "napari.types.ImageData"
 ) -> "napari.types.ImageData":
     from aydin.restoration.denoise.classic import classic_denoise
     return classic_denoise(input_image)
 
+
+@register_function(menu="Filtering / noise removal > noise2self (fgr, aydin)")
 def aydin_noise2self_fgr(input_image: "napari.types.ImageData"
 ) -> "napari.types.ImageData":
     from aydin.restoration.denoise.noise2selffgr import noise2self_fgr
