@@ -29,14 +29,14 @@ def napari_experimental_provide_function():
     return [aydin_classic_denoise, aydin_noise2self_fgr]
 
 
-@register_function(menu="Filtering / noise removal > Classic denoise (aydin)")
+@register_function(menu="Filtering / noise removal > Classic denoise (classic-butterworth, aydin)")
 def aydin_classic_denoise(input_image: "napari.types.ImageData"
 ) -> "napari.types.ImageData":
     from aydin.restoration.denoise.classic import classic_denoise
-    return classic_denoise(input_image, variant='butterworth')
+    return classic_denoise(input_image)
 
 
-@register_function(menu="Filtering / noise removal > noise2self (fgr, aydin)")
+@register_function(menu="Filtering / noise removal > noise2self (fgr-catboost, aydin)")
 def aydin_noise2self_fgr(input_image: "napari.types.ImageData"
 ) -> "napari.types.ImageData":
     from aydin.restoration.denoise.noise2selffgr import noise2self_fgr
