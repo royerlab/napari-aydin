@@ -7,7 +7,7 @@
 [![codecov](https://codecov.io/gh/AhmetCanSolak/napari-aydin/branch/main/graph/badge.svg)](https://codecov.io/gh/AhmetCanSolak/napari-aydin)
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-aydin)](https://napari-hub.org/plugins/napari-aydin)
 
-Aydin — User-friendly, Fast, Self-Supervised and Unsupervised Image Denoising for All. 
+napari plugin for Aydin — User-friendly, Fast, Self-Supervised and Unsupervised Image Denoising for All. 
 
 ----------------------------------
 
@@ -26,6 +26,16 @@ https://napari.org/docs/plugins/index.html
 You can install `napari-aydin` via [pip]:
 
     pip install napari-aydin
+
+## Usage
+
+Here in this plugin we provide two of the most popular denoiser implementations from Aydin.
+For a more detailed experience please get Aydin package itself from its webpage 
+https://royerlab.github.io/aydin/.
+
+#### Aydin Classic Butterworth Denoiser
+
+This is a go-to denoiser option for many biologists.
 
 
 
